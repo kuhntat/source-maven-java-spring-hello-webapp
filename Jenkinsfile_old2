@@ -34,7 +34,7 @@ pipeline {
 				label 'controller'
 		}
 			steps{
-				ansiblePlaybook(playbook: 'docker-ansible.yaml')
+				sh 'docker container run -d -p 80:8080 --name webserver tomcat:hello'
 			}
 		}
 	}
